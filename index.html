@@ -149,8 +149,7 @@ questions.sort(() => Math.random() - 0.5);
 
 const quiz = document.getElementById("quiz");
 
-questions.forEach((q,index){
-
+questions.sort(() => Math.random() - 0.5);
     // Shuffle options
     const options = [...q.options].sort(() => Math.random() - 0.5);
 
@@ -179,8 +178,10 @@ function checkAnswers(){
 
     let marks = 0;
 
-    questions.forEach((q,index)=>{
+const shuffledOptions = [...q.options].sort(() => Math.random() - 0.5);
 
+shuffledOptions.forEach(option=>{
+    
         const selected = document.querySelector(`input[name="q${index}"]:checked`);
         const result = document.getElementById(`result${index}`);
 
